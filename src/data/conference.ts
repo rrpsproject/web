@@ -1,36 +1,47 @@
-export type ProgramItem = {
-  time?: string;
-  title: string;
+export type CommitteeMember = {
+  name: string;
+  affiliation: string;
 };
 
-export type Speaker = {
-  id: string;
+export type Sponsor = {
   name: string;
-  institution: string;
-  talkTitle: string;
 };
 
 export const conference = {
-  title: "RRPS First Conference 2026",
-  collaboration: "In collaboration with Weizmann Institute of Science",
+  title: "The 1st RRPS Research Day",
+  tagline: "The Future of Psychedelic Science",
+  collaboration: "In collaboration with the Weizmann Institute of Science",
   description:
-    "A full-day academic conference bringing together students and researchers in psychedelic science from across Israel.",
-  date: "December 2026",
+    "Join us for the 1st RRPS Conference, a student-led event bringing together early-career researchers across the field of psychedelic science. From neuroscience and clinical research to animal models, anthropology, and beyond, the event will foster scientific exchange, collaboration, and new perspectives shaping the future of psychedelic research in Israel.",
+  date: "23 December 2026",
+  venue: "The David Lopatie Conference Centre",
   location: "Weizmann Institute of Science",
-  registrationUrl: "https://forms.gle/placeholder-register",
+  registrationUrl:
+    "https://erez.weizmann.ac.il/apx/r/ws1/101/101/?P101_PKNS_CODE=3443",
+  abstractDeadline: "September 23, 2026",
+  registrationDeadline: "December 15, 2026",
+  poster: "/images/RRPS_Conference_Invite.jpg",
+  coordinator: {
+    name: "Irit Veksler",
+    role: "Conference Coordinator & Accessibility",
+    phones: ["08-9344245", "050-510-9718"],
+    email: "Irit.veksler@weizmann.ac.il",
+  },
 };
 
-export const programItems: ProgramItem[] = [
-  { title: "Registration & Coffee" },
-  { title: "Opening Lecture" },
-  { title: "Research Presentations" },
-  { title: "Panel Discussion" },
-  { title: "Networking Session" },
+export const organizingCommittee: CommitteeMember[] = [
+  { name: "Ophir Netzer", affiliation: "University of Haifa" },
+  { name: "Lisa Simon", affiliation: "University of Haifa" },
+  { name: "Jonathan Toledano", affiliation: "Weizmann Institute of Science" },
+  { name: "Uri Monsonego", affiliation: "Weizmann Institute of Science" },
+  { name: "Chloe Shevakh", affiliation: "The Hebrew University of Jerusalem" },
+  { name: "Tom Ben Tal", affiliation: "The Hebrew University of Jerusalem" },
+  { name: "Lior Kritzman", affiliation: "Reichmann University" },
+  { name: "Dana Bar-Zvi", affiliation: "Weizmann Institute of Science" },
 ];
 
-// Placeholder — replace with confirmed speakers once available.
-export const speakers: Speaker[] = [
-  { id: "speaker-1", name: "Speaker to be announced", institution: "—", talkTitle: "—" },
-  { id: "speaker-2", name: "Speaker to be announced", institution: "—", talkTitle: "—" },
-  { id: "speaker-3", name: "Speaker to be announced", institution: "—", talkTitle: "—" },
+export const sponsors: Sponsor[] = [
+  { name: "SalomonLab" },
+  { name: "Azrieli Foundation" },
+  { name: "MAPS Israel" },
 ];

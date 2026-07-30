@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
-import CommunityDirectory from "./CommunityDirectory";
+import CommunityGate from "./CommunityGate";
 
 export const metadata: Metadata = {
   title: "Community — RRPS",
@@ -13,7 +13,7 @@ export default function CommunityPage() {
         title="Our Community"
         subtitle="Connect. Collaborate. Advance science together."
       />
-      <CommunityDirectory />
+      <CommunityGate />
     </div>
   );
 }
