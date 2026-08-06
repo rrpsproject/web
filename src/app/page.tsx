@@ -36,8 +36,8 @@ const whatWeDo = [
 export default function Home() {
   return (
     <div>
-      <section className="relative isolate overflow-hidden border-b border-brand-navy/10">
-        <div className="absolute inset-0 z-0">
+      <section className="relative isolate overflow-hidden border-b border-brand-navy/10 bg-brand-cream">
+        <div className="absolute inset-0 z-0 hidden sm:block">
           <Image
             src="/images/bg.jpg"
             alt=""
