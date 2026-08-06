@@ -107,13 +107,19 @@ export default function ConferencePage() {
       {/* Sponsors */}
       <section className="mx-auto max-w-6xl px-6 py-16">
         <h2 className="font-serif text-2xl text-brand-navy">Sponsors</h2>
-        <ul className="mt-6 flex flex-wrap gap-3">
+        <ul className="mt-6 flex flex-wrap gap-6">
           {sponsors.map((sponsor) => (
             <li
               key={sponsor.name}
-              className="rounded-full border border-brand-navy/15 bg-brand-cream-deep/40 px-5 py-2.5 text-sm font-medium text-brand-navy"
+              className="flex h-28 w-48 items-center justify-center rounded-xl border border-brand-navy/15 bg-white p-4"
             >
-              {sponsor.name}
+              <Image
+                src={sponsor.logo}
+                alt={sponsor.name}
+                width={160}
+                height={80}
+                className="max-h-full w-auto max-w-full object-contain"
+              />
             </li>
           ))}
         </ul>
