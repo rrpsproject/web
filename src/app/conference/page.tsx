@@ -113,13 +113,19 @@ export default function ConferencePage() {
               key={sponsor.name}
               className="flex h-28 w-48 items-center justify-center rounded-xl border border-brand-navy/15 bg-white p-4"
             >
-              <Image
-                src={sponsor.logo}
-                alt={sponsor.name}
-                width={160}
-                height={80}
-                className="max-h-full w-auto max-w-full object-contain"
-              />
+              {sponsor.logo ? (
+                <Image
+                  src={sponsor.logo}
+                  alt={sponsor.name}
+                  width={160}
+                  height={80}
+                  className="max-h-full w-auto max-w-full object-contain"
+                />
+              ) : (
+                <span className="text-center text-sm font-semibold text-brand-navy">
+                  {sponsor.name}
+                </span>
+              )}
             </li>
           ))}
         </ul>

@@ -5,7 +5,7 @@ export type CommitteeMember = {
 
 export type Sponsor = {
   name: string;
-  logo: string;
+  logo?: string;
 };
 
 export const conference = {
@@ -45,4 +45,9 @@ export const sponsors: Sponsor[] = [
   { name: "SalomonLab", logo: "/sponsors/salomonlab.jpeg" },
   { name: "Azrieli Foundation", logo: "/sponsors/azrieli-foundation.png" },
   { name: "MAPS Israel", logo: "/sponsors/maps-israel.png" },
+  {
+    name: "Azrieli Institute for Brain & Neural Sciences",
+    logo: "/sponsors/azrieli-institute-brain-neural.png",
+  },
+  { name: "Center for Research on Positive Neuroscience" },
 ];
