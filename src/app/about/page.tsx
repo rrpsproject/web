@@ -42,7 +42,7 @@ export default function AboutPage() {
 
       <section className="mx-auto max-w-5xl px-6 pb-16">
         <h2 className="text-center font-serif text-2xl text-brand-navy">
-          Our Team
+          Organizing Committee
         </h2>
         <div className="mt-10 flex flex-wrap justify-center gap-x-10 gap-y-10">
           {firstRow.map((member) => (
