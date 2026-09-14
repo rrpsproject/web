@@ -99,9 +99,16 @@ export default function Home() {
         </div>
       </section>
 
-      {upcomingEvents[0] && (
+      {upcomingEvents.length > 0 && (
         <section className="mx-auto max-w-6xl px-6 pb-3 sm:pb-4">
-          <EventCard event={upcomingEvents[0]} eyebrow="Upcoming Event" />
+          <p className="text-xs font-semibold uppercase tracking-wide text-brand-teal">
+            Upcoming Events
+          </p>
+          <div className="mt-3 space-y-4">
+            {upcomingEvents.slice(0, 2).map((event) => (
+              <EventCard key={event.id} event={event} />
+            ))}
+          </div>
         </section>
       )}
     </div>
