@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { CalendarIcon, MapPinIcon, ArrowRightIcon } from "@/components/ui/icons";
 import type { SiteEvent } from "@/data/events";
 
@@ -11,8 +12,20 @@ export default function EventCard({
 }) {
   return (
     <div className="flex flex-col gap-6 rounded-2xl bg-brand-cream-deep/50 p-5 sm:flex-row sm:items-center sm:p-6">
-      <div className="flex h-40 w-full shrink-0 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-brand-navy to-brand-teal sm:h-32 sm:w-56">
-        <CalendarIcon className="h-10 w-10 text-brand-cream/70" />
+      <div className="h-40 w-full shrink-0 overflow-hidden rounded-xl bg-gradient-to-br from-brand-navy to-brand-teal sm:h-44 sm:w-40">
+        {event.banner ? (
+          <Image
+            src={event.banner}
+            alt={event.title}
+            width={400}
+            height={534}
+            className="h-full w-full object-cover"
+          />
+        ) : (
+          <div className="flex h-full w-full items-center justify-center">
+            <CalendarIcon className="h-10 w-10 text-brand-cream/70" />
+          </div>
+        )}
       </div>
 
       <div className="flex-1">
@@ -30,12 +43,26 @@ export default function EventCard({
             <MapPinIcon className="h-4 w-4" /> {event.location}
           </span>
         </div>
-        <Link
-          href={event.href}
-          className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-teal transition-colors hover:text-brand-navy"
-        >
-          View details <ArrowRightIcon />
-        </Link>
+        <p className="mt-2 text-sm leading-relaxed text-brand-navy/75">
+          {event.description}
+        </p>
+        {event.external ? (
+          <a
+            href={event.href}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-teal transition-colors hover:text-brand-navy"
+          >
+            Register <ArrowRightIcon />
+          </a>
+        ) : (
+          <Link
+            href={event.href}
+            className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-teal transition-colors hover:text-brand-navy"
+          >
+            View details <ArrowRightIcon />
+          </Link>
+        )}
       </div>
     </div>
   );
