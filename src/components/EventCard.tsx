@@ -46,7 +46,28 @@ export default function EventCard({
         <p className="mt-2 text-sm leading-relaxed text-brand-navy/75">
           {event.description}
         </p>
-        {event.external ? (
+        {event.photos && event.photos.length > 0 && (
+          <div className="mt-4 grid grid-cols-3 gap-2 sm:grid-cols-6">
+            {event.photos.map((src, i) => (
+              <a
+                key={src}
+                href={src}
+                target="_blank"
+                rel="noreferrer"
+                className="block aspect-square overflow-hidden rounded-lg"
+              >
+                <Image
+                  src={src}
+                  alt={`${event.title} — photo ${i + 1}`}
+                  width={240}
+                  height={240}
+                  className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+                />
+              </a>
+            ))}
+          </div>
+        )}
+        {!event.href ? null : event.external ? (
           <a
             href={event.href}
             target="_blank"
