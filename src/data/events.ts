@@ -55,7 +55,7 @@ export const events: SiteEvent[] = [
     date: "Thursday, May 14, 2026",
     location: "Cafe Hashmal, Tel Aviv",
     description:
-      "The kick-off meeting of the RRPS forum — an evening to connect, inspire, and build together. We announced the forum, presented its cases and future direction, and introduced the core team and forum members.",
+      "The evening that launched the RRPS forum. Researchers and friends of the community gathered at Cafe Hashmal in Tel Aviv to connect, share inspiration, and start building together. We officially announced the forum, presented the cases we're working on and our vision for the road ahead, and introduced the core team alongside the forum's founding members.",
     status: "past",
     banner: kickoffPhotos[1],
     photos: kickoffPhotos,
