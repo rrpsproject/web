@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "RRPS",
   fullName: "Rising Researchers in Psychedelic Science",
-  contactEmail: "rrps.project@gmail.com",
+  contactEmail: "contact@rrps-forum.com",
   linkedinUrl: "https://www.linkedin.com/",
   joinFormUrl:
     "https://docs.google.com/forms/d/e/1FAIpQLSdzW3NSAbSOP8iCYBfaU7Fsp-JhhgW2AS4DTZYNqBWk0VgGYA/viewform",

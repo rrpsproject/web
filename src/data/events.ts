@@ -17,17 +17,17 @@ const kickoffPhotos = [1, 2, 3, 4, 5, 6].map(
 
 export const events: SiteEvent[] = [
   {
-    id: "vejmola-webinar-2026-10-29",
+    id: "weiner-webinar-2026-11-23",
     title:
-      "Perceptual Changes Induced by Psychedelics and Their Electrophysiological Correlates in Rats",
-    date: "Thursday, October 29, 2026 · 19:00 IST / 18:00 CET / 17:00 UTC",
+      "Single-Nucleus Transcriptomics Reveals Cell Type-Specific and Time-Dependent Effects of Psilocybin and Ketamine on Gene Expression",
+    date: "Monday, November 23, 2026 · 19:00 IST / 12:00 EST / 18:00 CET",
     location: "Online — RRPS webinar",
     description:
-      "How do psychedelic visual distortions actually work in the brain? Dr. Čestmír Vejmola, a postdoctoral researcher at the National Institute of Mental Health (Czech Republic), bridges rodent electrophysiology and human visual perception to reveal how psychedelics alter sensory processing across species — presenting new translational models linking neural activity to altered visual states, and shared behavioral patterns between humans and animal models under psilocybin. Relevant for researchers across neuroscience, psychology, computational modeling, and medicine. Free, registration required.",
-    href: "https://shorturl.at/UTAo6",
+      "Psilocybin and ketamine can produce long-lasting changes in neural circuits and behavior, but the transcriptional mechanisms behind these effects remain unclear. Amanda Weiner, a graduate student in the Kwan Lab at Cornell University, presents a single-nucleus RNA sequencing study of the mouse medial frontal cortex, showing that psilocybin produces distinct, temporally regulated transcriptional responses across neuronal and glial cell types, with patterns that differ from those induced by ketamine. Free, registration required.",
+    href: "https://shorturl.at/jfPlQ",
     status: "upcoming",
     external: true,
-    banner: "/images/events/vejmola-webinar-oct29.jpg",
+    banner: "/images/events/weiner-webinar-nov23.jpg",
   },
   {
     id: "rrps-conference-2026",
@@ -38,6 +38,17 @@ export const events: SiteEvent[] = [
       "An academic conference bringing together researchers in psychedelic science in Israel.",
     href: "/conference",
     status: "upcoming",
+  },
+  {
+    id: "vejmola-webinar-2026-10-29",
+    title:
+      "Perceptual Changes Induced by Psychedelics and Their Electrophysiological Correlates in Rats",
+    date: "Thursday, October 29, 2026",
+    location: "Online — RRPS webinar",
+    description:
+      "How do psychedelic visual distortions actually work in the brain? Dr. Čestmír Vejmola, a postdoctoral researcher at the National Institute of Mental Health (Czech Republic), bridged rodent electrophysiology and human visual perception to show how psychedelics alter sensory processing across species — presenting new translational models linking neural activity to altered visual states, and shared behavioral patterns between humans and animal models under psilocybin.",
+    status: "past",
+    banner: "/images/events/vejmola-webinar-oct29.jpg",
   },
   {
     id: "lips-webinar-2026-09-29",
