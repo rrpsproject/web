@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Logo from "./Logo";
-import { footerNav } from "@/lib/site";
+import { footerNav, siteConfig } from "@/lib/site";
 
 export default function Footer() {
   return (
@@ -18,8 +18,16 @@ export default function Footer() {
           <FooterColumn title="Legal" links={footerNav.legal} />
         </div>
 
-        <div className="mt-12 border-t border-brand-cream/15 pt-6 text-xs text-brand-cream/55">
-          © {new Date().getFullYear()} RRPS — Rising Researchers in Psychedelic Science
+        <div className="mt-12 flex flex-col gap-2 border-t border-brand-cream/15 pt-6 text-xs text-brand-cream/55 sm:flex-row sm:items-center sm:justify-between">
+          <span>
+            © {new Date().getFullYear()} RRPS — Rising Researchers in Psychedelic Science
+          </span>
+          <a
+            href={`mailto:${siteConfig.contactEmail}`}
+            className="text-brand-cream/85 hover:text-brand-cream"
+          >
+            {siteConfig.contactEmail}
+          </a>
         </div>
       </div>
     </footer>
