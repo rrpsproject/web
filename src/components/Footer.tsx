@@ -11,6 +11,12 @@ export default function Footer() {
             <span className="inline-flex rounded-xl bg-brand-cream px-3.5 py-2.5">
               <Logo className="h-8 w-auto" />
             </span>
+            <a
+              href={`mailto:${siteConfig.contactEmail}`}
+              className="mt-4 block text-sm text-brand-cream/85 hover:text-brand-cream"
+            >
+              {siteConfig.contactEmail}
+            </a>
           </div>
 
           <FooterColumn title="Navigate" links={footerNav.navigate} />
@@ -18,16 +24,8 @@ export default function Footer() {
           <FooterColumn title="Legal" links={footerNav.legal} />
         </div>
 
-        <div className="mt-12 flex flex-col gap-2 border-t border-brand-cream/15 pt-6 text-xs text-brand-cream/55 sm:flex-row sm:items-center sm:justify-between">
-          <span>
-            © {new Date().getFullYear()} RRPS — Rising Researchers in Psychedelic Science
-          </span>
-          <a
-            href={`mailto:${siteConfig.contactEmail}`}
-            className="text-brand-cream/85 hover:text-brand-cream"
-          >
-            {siteConfig.contactEmail}
-          </a>
+        <div className="mt-12 border-t border-brand-cream/15 pt-6 text-xs text-brand-cream/55">
+          © {new Date().getFullYear()} RRPS — Rising Researchers in Psychedelic Science
         </div>
       </div>
     </footer>
