@@ -6,7 +6,10 @@ import { CalendarIcon, MapPinIcon } from "@/components/ui/icons";
 import {
   conference,
   organizingCommittee,
+  posterSession,
+  program,
   sponsors,
+  type ProgramItem,
 } from "@/data/conference";
 
 export const metadata: Metadata = {
@@ -80,6 +83,65 @@ export default function ConferencePage() {
         </div>
       </section>
 
+      {/* Program */}
+      <section
+        id="program"
+        className="scroll-mt-24 border-t border-brand-navy/10 bg-white px-6 py-16"
+      >
+        <div className="mx-auto max-w-4xl">
+          <h2 className="font-serif text-2xl text-brand-navy">Program</h2>
+          <p className="mt-2 text-sm text-brand-navy/60">
+            {conference.date} · {conference.venue}, {conference.location}
+          </p>
+          <ol className="mt-8 space-y-3">
+            {program.map((item, i) => (
+              <ProgramRow key={i} item={item} />
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* Posters */}
+      <section id="posters" className="scroll-mt-24 px-6 py-16">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="font-serif text-2xl text-brand-navy">
+            {posterSession.title}
+          </h2>
+          <p className="mt-2 text-sm font-semibold text-brand-teal">
+            {posterSession.time}
+          </p>
+          <div className="mt-8 space-y-10">
+            {posterSession.groups.map((group) => (
+              <div key={group.label}>
+                <h3 className="text-xs font-semibold uppercase tracking-wide text-brand-navy/60">
+                  {group.label}
+                </h3>
+                <ol className="mt-4 grid gap-x-10 gap-y-5 md:grid-cols-2">
+                  {group.items.map((poster) => (
+                    <li key={poster.number} className="flex gap-3">
+                      <span className="w-6 shrink-0 pt-0.5 text-sm tabular-nums text-brand-navy/50">
+                        {poster.number}
+                      </span>
+                      <div>
+                        <p className="font-semibold leading-snug text-brand-teal">
+                          {poster.title}
+                        </p>
+                        <p className="mt-1 text-sm text-brand-navy/80">
+                          <span className="font-semibold text-brand-navy">
+                            {poster.presenter}
+                          </span>{" "}
+                          {poster.affiliation}
+                        </p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Organizing committee */}
       <section className="border-t border-brand-navy/10 bg-white px-6 py-16">
         <div className="mx-auto max-w-6xl">
@@ -111,7 +173,7 @@ export default function ConferencePage() {
           {sponsors.map((sponsor) => (
             <li
               key={sponsor.name}
-              className="flex h-28 w-48 items-center justify-center rounded-xl border border-brand-navy/15 bg-white p-4"
+              className="flex min-h-28 w-48 items-center justify-center rounded-xl border border-brand-navy/15 bg-white p-4"
             >
               {sponsor.logo ? (
                 <Image
@@ -119,7 +181,7 @@ export default function ConferencePage() {
                   alt={sponsor.name}
                   width={160}
                   height={80}
-                  className="max-h-full w-auto max-w-full object-contain"
+                  className="max-h-20 w-auto max-w-full object-contain"
                 />
               ) : (
                 <span className="text-center text-sm font-semibold text-brand-navy">
@@ -172,5 +234,81 @@ function Deadline({ label, date }: { label: string; date: string }) {
       </dt>
       <dd className="mt-1 text-sm font-medium text-brand-navy">{date}</dd>
     </div>
+  );
+}
+
+function ProgramRow({ item }: { item: ProgramItem }) {
+  if (item.kind === "break") {
+    return (
+      <li className="flex gap-4 px-1 py-1 text-brand-navy/80">
+        <span className="w-12 shrink-0 tabular-nums text-brand-navy/60">
+          {item.time}
+        </span>
+        <span className="font-medium">{item.label}</span>
+      </li>
+    );
+  }
+
+  if (item.kind === "panel") {
+    return (
+      <li className="rounded-xl bg-brand-cream-deep/40 px-4 py-4 sm:px-5">
+        <div className="flex gap-4">
+          <span className="w-12 shrink-0 tabular-nums text-brand-navy/60">
+            {item.time}
+          </span>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wide text-brand-navy/60">
+              Panel
+            </p>
+            <p className="mt-1 font-semibold leading-snug text-brand-navy">
+              {item.title}
+            </p>
+            <p className="mt-2 text-sm text-brand-navy/80">
+              Moderator:{" "}
+              <span className="font-semibold text-brand-navy">
+                {item.moderator.name}
+              </span>{" "}
+              {item.moderator.affiliation}
+            </p>
+            <p className="text-sm text-brand-navy/80">
+              Panelists: {item.panelists}
+            </p>
+          </div>
+        </div>
+      </li>
+    );
+  }
+
+  return (
+    <li className="pt-4">
+      <div className="rounded-xl bg-brand-cream-deep/40 px-4 py-3 sm:px-5">
+        <p className="text-xs font-semibold uppercase tracking-wide text-brand-navy/60">
+          {item.label}
+        </p>
+        <p className="mt-1 font-semibold leading-snug text-brand-navy">
+          {item.title}
+        </p>
+      </div>
+      <ol className="mt-4 space-y-4">
+        {item.talks.map((talk) => (
+          <li key={talk.time} className="flex gap-4 px-1">
+            <span className="w-12 shrink-0 tabular-nums text-brand-navy/60">
+              {talk.time}
+            </span>
+            <div>
+              <p className="font-semibold leading-snug text-brand-teal">
+                {talk.title}
+              </p>
+              <p className="mt-1 text-sm text-brand-navy/80">
+                <span className="font-semibold text-brand-navy">
+                  {talk.speaker}
+                </span>{" "}
+                {talk.affiliation}
+              </p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </li>
   );
 }
