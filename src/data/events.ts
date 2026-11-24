@@ -17,27 +17,27 @@ const kickoffPhotos = [1, 2, 3, 4, 5, 6].map(
 
 export const events: SiteEvent[] = [
   {
+    id: "rrps-conference-2026",
+    title: "The 1st RRPS Research Day — The Future of Psychedelic Science",
+    date: "Wednesday, December 23, 2026",
+    location:
+      "The David Lopatie Conference Centre, Weizmann Institute of Science",
+    description:
+      "A student-led research day bringing together early-career researchers across psychedelic science — from neuroscience and clinical research to animal models, anthropology, and beyond. Four sessions of talks, a panel with study participants, and a poster session.",
+    href: "/conference",
+    status: "upcoming",
+    banner: "/images/events/rrps-research-day-dec23.jpg",
+  },
+  {
     id: "weiner-webinar-2026-11-23",
     title:
       "Single-Nucleus Transcriptomics Reveals Cell Type-Specific and Time-Dependent Effects of Psilocybin and Ketamine on Gene Expression",
-    date: "Monday, November 23, 2026 · 19:00 IST / 12:00 EST / 18:00 CET",
+    date: "Monday, November 23, 2026",
     location: "Online — RRPS webinar",
     description:
-      "Psilocybin and ketamine can produce long-lasting changes in neural circuits and behavior, but the transcriptional mechanisms behind these effects remain unclear. Amanda Weiner, a graduate student in the Kwan Lab at Cornell University, presents a single-nucleus RNA sequencing study of the mouse medial frontal cortex, showing that psilocybin produces distinct, temporally regulated transcriptional responses across neuronal and glial cell types, with patterns that differ from those induced by ketamine. Free, registration required.",
-    href: "https://shorturl.at/jfPlQ",
-    status: "upcoming",
-    external: true,
+      "Psilocybin and ketamine can produce long-lasting changes in neural circuits and behavior, but the transcriptional mechanisms behind these effects remain unclear. Amanda Weiner, a graduate student in the Kwan Lab at Cornell University, presented a single-nucleus RNA sequencing study of the mouse medial frontal cortex, showing that psilocybin produced distinct, temporally regulated transcriptional responses across neuronal and glial cell types, with patterns that differ from those induced by ketamine.",
+    status: "past",
     banner: "/images/events/weiner-webinar-nov23.jpg",
-  },
-  {
-    id: "rrps-conference-2026",
-    title: "RRPS First Conference 2026",
-    date: "December 2026",
-    location: "Weizmann Institute of Science",
-    description:
-      "An academic conference bringing together researchers in psychedelic science in Israel.",
-    href: "/conference",
-    status: "upcoming",
   },
   {
     id: "vejmola-webinar-2026-10-29",

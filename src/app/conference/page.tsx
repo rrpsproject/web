@@ -173,13 +173,15 @@ export default function ConferencePage() {
           {sponsors.map((sponsor) => (
             <li
               key={sponsor.name}
-              className="flex min-h-28 w-48 items-center justify-center rounded-xl border border-brand-navy/15 bg-white p-4"
+              className={`flex min-h-28 items-center justify-center rounded-xl border border-brand-navy/15 bg-white p-4 ${
+                sponsor.wide ? "w-full sm:w-[25.5rem]" : "w-48"
+              }`}
             >
               {sponsor.logo ? (
                 <Image
                   src={sponsor.logo}
                   alt={sponsor.name}
-                  width={160}
+                  width={sponsor.wide ? 376 : 160}
                   height={80}
                   className="max-h-20 w-auto max-w-full object-contain"
                 />

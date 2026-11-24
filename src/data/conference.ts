@@ -6,6 +6,8 @@ export type CommitteeMember = {
 export type Sponsor = {
   name: string;
   logo?: string;
+  /** Wide logos get a double-width card so they stay readable. */
+  wide?: boolean;
 };
 
 export const conference = {
@@ -49,10 +51,13 @@ export const sponsors: Sponsor[] = [
     name: "Azrieli Institute for Brain & Neural Sciences",
     logo: "/sponsors/azrieli-institute-brain-neural.png",
   },
-  { name: "Center for Research on Positive Neuroscience" },
+  {
+    name: "Mike and Valeria Rosenbloom Center for Research on Positive Neuroscience",
+  },
   {
     name: "Haifa Brain and Behavior Hub (HBBH), University of Haifa",
     logo: "/sponsors/haifa-brain-behavior-hub.webp",
+    wide: true,
   },
   {
     name: "Irene and Jared M. Drescher Center for Research on Mental and Emotional Health",
